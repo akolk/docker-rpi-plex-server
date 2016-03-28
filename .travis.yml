@@ -22,6 +22,7 @@ after_success: |
     CURRENT_TAG=`git describe --exact-match --abbrev=0 --tags`
     if [ -n "${CURRENT_TAG}" ]
     then
+      docker tag sedden/rpi-plex-server:latest sedden/rpi-plex-server:${CURRENT_TAG} || exit 1
       docker push sedden/rpi-plex-server:${CURRENT_TAG} || exit 1
     fi
   fi
