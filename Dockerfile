@@ -20,7 +20,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
 ENV PLEX_VERSION=0.9.16.6.1993-5089475 PLEX_PATH=/opt/plex/Application
 RUN mkdir -p ${PLEX_PATH} /tmp/plex \
  && cd ${PLEX_PATH} \
- && wget --no-verbose -O /tmp/plex/plex.tar https://downloads.plex.tv/plex-media-server/${PLEX_VERSION}/PlexMediaServer-${PLEX_VERSION}-neon-armv7.spk \
+ && wget --no-verbose -O /tmp/plex/plex.tar https://downloads.plex.tv/plex-media-server/${PLEX_VERSION}/PlexMediaServer-${PLEX_VERSION}-armv7.spk \
  && tar -xvf /tmp/plex/plex.tar -C /tmp/plex \
  && tar -xvf /tmp/plex/package.tgz -C ${PLEX_PATH} \
  && rm -rf /tmp/plex
